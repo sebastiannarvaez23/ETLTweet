@@ -7,4 +7,4 @@ This program shows how we achieve a connection to a database hosted in DBS MySQL
 3. Install the requisites.txt dependencies with the `$ pip install -r requisites.txt` command. This must be done taking into account that the virtual environment is turned on in the terminal where the aforementioned command is executed.
 4. Run the main.py file to run the program with the `$ python main.py` command
 
-###End
+### End
