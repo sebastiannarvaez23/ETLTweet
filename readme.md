@@ -1,5 +1,5 @@
 ### What is this program about?
-This program shows how we achieve a connection to a database hosted in DBS MySQL through a connection object.
+This program simulates the behavior of an ETL, it makes the connection to a MySQL database and at the same time makes some consumptions to the tweeter APIs. A data feed job is carried out to later be displayed in a Dashboard built in Power BI.
 
 ### Instructions for execute:
 1. Create a virtual environment with the command `$ py -m venv vevn`
