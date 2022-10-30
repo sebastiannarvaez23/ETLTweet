@@ -1,0 +1,14 @@
+[
+    {"text":"No me gusta la gestion de petro", "label":"neg"},
+    {"text":"Petro no tiene conocimiento sobre medio ambiente", "label":"neg"},
+    {"text":"Petro salvara a colombia de la contaminacion", "label":"pos"},
+    {"text":"Petro no ayuda al medio ambiente", "label":"neg"},
+    {"text":"Las leyes de petro ayudan el medio ambiente pero no la economia", "label":"pos"},
+    {"text":"Las leyes de petro son absurdas para la gestion del medio ambiente", "label":"neg"},
+    {"text":"Gobierno de petro prometio el cuidado del medio ambiente", "label":"pos"},
+    {"text":"Gobierno de petro cumple sus promesas de cuidar el medio ambiente", "label":"pos"},
+    {"text":"Petro no está permitiendo que compañias extrangeras destruyan nuestro ecosistema", "label":"pos"},
+    {"text":"Petro cuida nuestros paramos", "label":"pos"},
+    {"text":"Gobierno de gustavo petro fomenta el cuidado del medio ambiente", "label":"pos"},
+    {"text":"Gobierno de petro protege la vida de los animales silvestres", "label":"pos"}
+]

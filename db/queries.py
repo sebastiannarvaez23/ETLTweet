@@ -1,16 +1,9 @@
 
 def query_insert_tweet(tweet):
-    sql = """
+    sql = f"""
     INSERT INTO tweets 
-    (text, created_at, favorite_count, retweet_count, coordinates) 
+    (id_tweet, text_tweet, created_date, favorites, retweets, classification) 
     VALUES 
-    ('{}', '{}', '{}', '{}', '{}')
-    """.format(
-        tweet.text, 
-        tweet.created_at, 
-        tweet.favorite_count, 
-        tweet.retweet_count, 
-        tweet.coordinates
-    )
-    
+    ('{tweet['id_tweet']}', '{tweet['text']}', '{tweet['created_date']}', '{tweet['favorites']}', '{tweet['retweets']}', '{tweet['classification']}')
+    """
     return sql

@@ -1,31 +1,26 @@
-from api.credentials import ACCESS_TOKEN_SECRET
+from api.credentials import ACCESS_TOKEN_SECRET, API_KEY, API_KEY_SECRET, ACCESS_TOKEN
+from textblob.classifiers import NaiveBayesClassifier
 import tweepy
 
-"""
-Test Data:
-query = 'covid -is:retweet'
-response = client.search_recent_tweets(query=query, max_results=100)
-"""
-
-client = tweepy.Client(bearer_token=ACCESS_TOKEN_SECRET)
-
 class TweeterAPI:
+    def get_all_tweets(self, query, limit):
 
-    def get_all_tweets(self, query):
-        global client
-        tweets = []
-        for tweet in tweepy.Cursor(client.search, q=query, tweet_mode="extended").items(100):
-            print("El texto es " + tweet.text)
-            print("Fecha de creacion " + tweet.created_at)
-            print("Numero de favoritos " + tweet.favorite_count)
-            print("Numero de retweets " + tweet.retweet_count)
-            print("Coordenadas del tweet " + tweet.coordinates)
+        with open('api/traininginput.json', 'r') as fp:
+            cl=NaiveBayesClassifier(fp, format='json')
 
-            tweets.append({
-                'text': tweet.text,
-                'created_at': tweet.created_at,
-                'favorite_count': tweet.favorite_count,
-                'retweet_count': tweet.retweet_count,
-                'coordinates': tweet.coordinates,
+        response = []
+        auth = tweepy.OAuth1UserHandler(API_KEY, API_KEY_SECRET)
+        auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
+        api = tweepy.API(auth)
+
+        for tweet in tweepy.Cursor(api.search_tweets, q=query).items(limit):
+            classification = cl.classify(tweet.text)
+            response.append({
+                'id_tweet':tweet.id,
+                'text':tweet.text,
+                'created_date':tweet.created_at,
+                'favorites':tweet.favorite_count,
+                'retweets':tweet.retweet_count,
+                'classification': classification
             })
-        return tweets
+        return response
