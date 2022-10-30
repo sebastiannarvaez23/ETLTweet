@@ -24,6 +24,10 @@ def main():
 
     for tweet in tweets:
         database.insert_teewt(tweet)
+        database.close()
 
 if __name__ == "__main__":
     main()
+
+
+    
