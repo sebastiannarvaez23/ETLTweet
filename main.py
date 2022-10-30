@@ -19,7 +19,7 @@ import time
 def main():
     database = mysql.ConnMySQL()
     api = apitweet.TweeterAPI()
-    tweets = api.get_all_tweets("Medio ambiente petro", 100)
+    tweets = api.get_all_tweets("gobierno petro", 100)
     print(tweets)
 
     for tweet in tweets:

@@ -10,7 +10,7 @@ class ConnMySQL:
             host='localhost',
             user='root',
             password='',
-            db='apibigdata',
+            db='apibigdata2',
         )
         self.cursor = self.connection.cursor()
         print("Conecction Succesfull!")

@@ -1,5 +1,7 @@
 CREATE SCHEMA apibigdata DEFAULT CHARACTER SET utf8;
 
+USE apibigdata;
+
 CREATE TABLE tweets (
 	id int(10) auto_increment,
     id_tweet varchar(40),
