@@ -1,6 +1,7 @@
 
 def format_text_for_query(text):
     new_text = text.replace("'", "\"")
+    new_text = new_text.replace("\n", "");
     return new_text
 
 def query_insert_tweet(tweet):

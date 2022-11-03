@@ -10,18 +10,19 @@ class ConnMySQL:
             host='localhost',
             user='root',
             password='',
-            db='apibigdata2',
+            db='apibigdata',
         )
         self.cursor = self.connection.cursor()
-        print("Conecction Succesfull!")
+        #rint("Conecction Succesfull!")
 
     def insert_teewt(self, tweet):
         sql = query_insert_tweet(tweet)
         try:
+            self.connection.ping()
             self.cursor.execute(sql)
             self.connection.commit()
         except Exception as e:
-            raise
+            raise print(f"hubo un porblema: {e}")
     
     def close(self):
         self.connection.close()

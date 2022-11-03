@@ -17,12 +17,12 @@ import api.consumer as apitweet
 import time
 
 def main():
-    database = mysql.ConnMySQL()
     api = apitweet.TweeterAPI()
     tweets = api.get_all_tweets("gobierno petro", 100)
     print(tweets)
 
     for tweet in tweets:
+        database = mysql.ConnMySQL()
         database.insert_teewt(tweet)
         database.close()
 
